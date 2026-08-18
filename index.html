@@ -722,7 +722,7 @@ async function loadProducts(){
       if(!res.ok) throw new Error("HTTP " + res.status);
       const csv = await res.text();
       ALL_PRODUCTS = csvToObjects(csv);
-      statusLine.textContent = `${ALL_PRODUCTS.length} productos · fuente: Google Sheets`;
+      statusLine.textContent = `${ALL_PRODUCTS.length} productos 
     }catch(err){
       console.error("No se pudo cargar Google Sheets, usando demo:", err);
       ALL_PRODUCTS = DEMO_PRODUCTS;
