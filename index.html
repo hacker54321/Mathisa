@@ -8,22 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
-   ⚙️  CONFIGURACIÓN RÁPIDA — edita esto y ya
+   ⚙️  CONFIGURACIÓN RÁPIDA — METHISA
    ========================================================= */
 :root{
-  /* --- Paleta "acero industrial" --- */
-  --bg:            #121417;
-  --bg-panel:      #1b1e23;
-  --bg-panel-2:    #21252b;
-  --steel:         #4b535c;
-  --steel-light:   #8a929b;
-  --silver:        #d9dde1;
-  --text:          #eef0f2;
-  --text-muted:    #9aa1a9;
-  --accent:        #c7d0d9;   /* plata pulida / metálico */
-  --accent-dim:    #9aa5b0;
-  --line:          #2c3038;
-  --success:       #25d366;   /* verde whatsapp */
+  --bg:             #121417;
+  --bg-panel:       #1b1e23;
+  --bg-panel-2:     #21252b;
+  --steel:          #4b535c;
+  --steel-light:    #8a929b;
+  --silver:         #d9dde1;
+  --text:           #eef0f2;
+  --text-muted:     #9aa1a9;
+  --accent:         #c7d0d9;
+  --accent-dim:     #9aa5b0;
+  --line:           #2c3038;
+  --success:        #25d366;
 
   --font-display: 'Oswald', sans-serif;
   --font-body:    'Inter', sans-serif;
@@ -48,7 +47,6 @@ button{font-family:inherit;cursor:pointer;border:none;}
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:.02em;text-transform:uppercase;}
 .mono{font-family:var(--font-mono);}
 
-/* subtle rolled-steel background texture */
 body::before{
   content:"";
   position:fixed;inset:0;
@@ -70,7 +68,7 @@ header{
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.3rem;letter-spacing:.04em;}
 #brandName{font-family:var(--font-brand);font-weight:700;font-size:1.15rem;letter-spacing:.06em;}
-.logo-mark{width:30px;height:30px;flex-shrink:0;}
+.logo-mark{width:30px;height:30px;flex-shrink:0;border-radius:50%;}
 .navlinks{display:flex;gap:28px;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;color:var(--text-muted);}
 .navlinks a{transition:color .2s;}
 .navlinks a:hover{color:var(--accent);}
@@ -82,7 +80,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
   transition:transform .15s, box-shadow .15s;
 }
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,211,102,.25);}
-.menu-toggle{display:none;background:none;color:var(--text);font-size:1.5rem;}
 
 /* ---------- HERO ---------- */
 .hero{
@@ -114,11 +111,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .btn-ghost{border:1px solid var(--steel);color:var(--silver);}
 .btn-ghost:hover{border-color:var(--silver);}
 
-/* signature: rotating coil + sheen sweep */
 .coil-wrap{position:relative;display:flex;align-items:center;justify-content:center;}
-.coil{width:100%;max-width:360px;animation:spin 40s linear infinite;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));}
-@keyframes spin{to{transform:rotate(360deg);}}
-.hero-logo{width:100%;max-width:340px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));}
+.hero-img{width:100%;max-width:420px;border-radius:6px;box-shadow:0 20px 40px rgba(0,0,0,.6);object-fit:cover;}
 .sheen{
   position:absolute;top:-20%;left:-60%;width:60%;height:140%;
   background:linear-gradient(100deg, transparent, rgba(255,255,255,.12) 45%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.12) 55%, transparent);
@@ -138,14 +132,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
   mask-image:radial-gradient(ellipse at 30% 30%, black, transparent 70%);
 }
 
-/* ---------- SECTION SHELL ---------- */
+/* ---------- SECTIONS ---------- */
 section{padding:80px 0;}
 .section-head{margin-bottom:44px;max-width:640px;}
 .section-head .eyebrow{margin-bottom:10px;}
 .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px;}
 .section-head p{color:var(--text-muted);}
 
-/* ---------- QUIENES SOMOS / POR QUE ELEGIRNOS ---------- */
 .about{background:var(--bg-panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
 .about-grid p{color:var(--text-muted);margin-bottom:16px;}
@@ -156,36 +149,15 @@ section{padding:80px 0;}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
 .why-card{background:var(--bg-panel-2);padding:28px 22px;transition:background .2s;}
 .why-card:hover{background:#262b32;}
-.why-card svg{width:26px;height:26px;color:var(--accent);margin-bottom:16px;}
 .why-card h3{font-size:1rem;margin-bottom:8px;letter-spacing:.02em;}
 .why-card p{font-size:.86rem;color:var(--text-muted);}
-
-/* ---------- PROMO BANNER ---------- */
-.promo{
-  position:relative;overflow:hidden;
-  background:linear-gradient(120deg, var(--accent-dim), var(--accent));
-  border-radius:var(--radius);
-  padding:34px 40px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-  color:#14161a;
-}
-.promo::after{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(45deg, rgba(0,0,0,.06) 0 12px, transparent 12px 24px);
-}
-.promo-text{position:relative;z-index:1;}
-.promo-text .eyebrow{color:#14161a;opacity:.7;}
-.promo h3{font-size:1.5rem;margin:4px 0 6px;}
-.promo p{font-size:.92rem;font-weight:500;max-width:480px;}
-.promo .btn-primary{position:relative;z-index:1;background:#14161a;color:#fff;}
-.promo .btn-primary:hover{background:#000;}
 
 /* ---------- CATALOG ---------- */
 .catalog-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
 .filters{display:flex;gap:8px;flex-wrap:wrap;}
 .filter-btn{
   padding:8px 16px;border:1px solid var(--steel);border-radius:20px;font-size:.8rem;
-  color:var(--text-muted);letter-spacing:.02em;text-transform:uppercase;transition:.2s;
+  color:var(--text-muted);letter-spacing:.02em;text-transform:uppercase;transition:.2s;background:transparent;
 }
 .filter-btn.active,.filter-btn:hover{border-color:var(--accent);color:var(--accent);}
 .status-line{font-family:var(--font-mono);font-size:.78rem;color:var(--text-muted);}
@@ -198,13 +170,11 @@ section{padding:80px 0;}
 }
 .card:hover{transform:translateY(-4px);border-color:var(--steel-light);}
 .card-media{
-  position:relative;aspect-ratio:4/3;background:
-    linear-gradient(135deg,#2a2f36,#181a1d 60%);
+  position:relative;aspect-ratio:4/3;background:#181a1d;
   display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
-.card-media svg{width:64%;opacity:.85;}
-.card-media .sheen{width:40%;}
-.card-media img{width:100%;height:100%;object-fit:cover;}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+.card:hover .card-media img{transform:scale(1.05);}
 .badge{
   position:absolute;top:10px;left:10px;background:var(--accent);color:#14161a;
   font-size:.68rem;font-weight:700;padding:4px 9px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;z-index:2;
@@ -218,29 +188,26 @@ section{padding:80px 0;}
 .card-price small{display:block;font-size:.65rem;color:var(--text-muted);font-family:var(--font-body);text-transform:uppercase;}
 .card-link{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.03em;font-weight:600;}
 
-.empty-state{text-align:center;padding:60px 20px;color:var(--text-muted);}
-
 /* ---------- MODAL ---------- */
 .modal-overlay{
-  position:fixed;inset:0;background:rgba(8,9,11,.75);backdrop-filter:blur(4px);
+  position:fixed;inset:0;background:rgba(8,9,11,.85);backdrop-filter:blur(4px);
   z-index:100;display:none;align-items:center;justify-content:center;padding:20px;
 }
 .modal-overlay.open{display:flex;}
 .modal{
   background:var(--bg-panel);border:1px solid var(--line);border-radius:6px;
-  max-width:780px;width:100%;max-height:88vh;overflow:auto;
-  display:grid;grid-template-columns:1fr 1fr;
+  max-width:780px;width:100%;max-height:88vh;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;position:relative;
   animation:modal-in .25s ease;
 }
 @keyframes modal-in{from{opacity:0;transform:translateY(16px) scale(.98);}to{opacity:1;transform:none;}}
-.modal-media{background:linear-gradient(135deg,#2a2f36,#181a1d 60%);display:flex;align-items:center;justify-content:center;padding:30px;position:relative;overflow:hidden;min-height:260px;}
-.modal-media svg{width:70%;}
-.modal-media img{width:100%;height:100%;object-fit:cover;padding:0;position:absolute;inset:0;}
+.modal-media{background:#181a1d;position:relative;min-height:260px;}
+.modal-media img{width:100%;height:100%;object-fit:cover;}
 .modal-close{
   position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;
-  background:rgba(0,0,0,.4);color:var(--text);font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:5;
+  background:rgba(0,0,0,.6);color:var(--text);font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:5;cursor:pointer;
 }
-.modal-body{padding:32px 30px;display:flex;flex-direction:column;}
+.modal-body{padding:32px 30px;display:flex;flex-direction:column;overflow-y:auto;}
 .modal-cat{font-family:var(--font-mono);font-size:.72rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
 .modal-body h2{font-size:1.5rem;text-transform:none;font-family:var(--font-body);letter-spacing:0;margin-bottom:14px;}
 .modal-desc{color:var(--text-muted);font-size:.92rem;margin-bottom:20px;}
@@ -268,49 +235,30 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;}
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{border-top:1px solid var(--line);padding-top:20px;font-size:.75rem;color:var(--text-muted);font-family:var(--font-mono);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
-/* ---------- WA FLOAT BUTTON ---------- */
 .wa-float{
   position:fixed;bottom:24px;right:24px;z-index:60;
   background:var(--success);color:#0b1a10;width:58px;height:58px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4);
-  animation:pulse 2.4s infinite;
 }
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
 .wa-float svg{width:28px;height:28px;}
 
-/* ---------- REVEAL ON SCROLL ---------- */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
-.reveal.in{opacity:1;transform:none;}
-
-/* ---------- RESPONSIVE ---------- */
 @media (max-width:900px){
   .hero-inner{grid-template-columns:1fr;}
-  .coil-wrap{order:-1;max-width:240px;margin:0 auto;}
+  .coil-wrap{order:-1;max-width:320px;margin:0 auto;}
   .about-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:repeat(2,1fr);}
   .modal{grid-template-columns:1fr;}
-  .modal-media{min-height:180px;}
-}
-@media (max-width:640px){
-  .navlinks{display:none;}
-  .menu-toggle{display:block;}
-  .why-grid{grid-template-columns:1fr;}
-  .promo{flex-direction:column;align-items:flex-start;}
-}
-@media (prefers-reduced-motion: reduce){
-  .coil{animation:none;}
-  .sheen{animation:none;}
-  .reveal{transition:none;opacity:1;transform:none;}
+  .modal-media{min-height:200px;}
 }
 </style>
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
+<!-- NAV -->
 <header>
   <nav>
     <div class="logo">
-      <img class="logo-mark" src="data:image/webp;base64,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" alt="Logo">
+      <img class="logo-mark" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=100&q=80" alt="Logo">
       <span id="brandName">METHISA</span>
     </div>
     <div class="navlinks">
@@ -325,7 +273,7 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;}
   </nav>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg-grid"></div>
   <div class="hero-inner">
@@ -340,584 +288,196 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;}
     </div>
     <div class="coil-wrap">
       <div class="sheen"></div>
-      <img class="hero-logo" src="data:image/webp;base64,UklGRhLZAABXRUJQVlA4WAoAAAAQAAAA3wEAzAEAQUxQSCsEAAABEYdt2wYSbGv/pZO06f0PENH/CdBPcpFcwUFyJ8GQHcEbddlDkhfoBJL7o0M/85vDkkjiRGfp2LItSf5HUJItwZs5H/EHWBiTwlYavzI7mQwLOTFc5cx34+AtSBDANm4b4f+PRnefJgGCciMmwBEkSVEkS0zTg+OGDOB9Pc+juUBfefj53/h1gMOtQP/8f4NFef0k6PhPA9gxrpmj0vGwAJqjxxF6656p0ln3bJW+uhpUqqJagKRMPYSaTFUqGXXFqcRDRQLhmEKBaKhaQi+mZEInVPhPJVQ70AjVr9KG6QLIgloBksR2gB5MR0AK1BYwFx2HxZHMZU1mqPHYKBhmOw43k+YC6jzDIE+kc3J0WbJ69ufVJGWXpGMzB7K3UHazDZmK50rpQul4Zwl0g7Rsn/4PbxQDiFuoAW6VHT5QY3Mo4dVq4yS8Oe/hh6sxj72ZYD1cOAcsyLMZDMIe3boyNM66nCkInEFvZYj1sAc2j0LwxJA4Z/YGyG8a5uMwfX8qK4yqHLXqSk24OIXwTNX8eiSlVx4H/du4l41QGK/G9W9kGEV+/ZD+RdzMajqO3Zyk49jNSQrmPXv+ngymGFPfA0pGcgIlHOTwol9wFPFsV/IZKcA9+0j7XKrvQEUuNv7gbU8IWtQz6vvi3+Rc/pYJ6vbC/c5m95UAEAWQBvMPMrTD4+kVH+T1oAlr1m0RsNtewJYurBcIp3eJjxFAgymHvr5REsahdE0iBYK0mVsU4E2vE1na5HbDN/6HWcMwlXV6nHhrv3wR7JsFLbrP1hM+f/8ASItxR9Bb8CcSpX2puA12w1C6Mu6HhTzSPPm4eLdkBnEELeeTVWAoF+SU+hJm8VKPkIwXlQEO0lopQCR3fbO67B9tn+M44feSY36wPtnjFzP+YoqyNO1k1Jo32duhWBypcQYaXcUiMexCv/OTXN1aSHtrDzMs6IOD4ts2BFjCAl7zsr9QIb+XOQfz0pCcnGSv64G9stAyhVBYrjQdYAmJkIKtQkpWUDAJ5yxDfo8Ygf18QB/kUabXESG9PQkMxaJgfi1Dfht4SKE+vQKEUvdcQLRdn++Z0itoCSyTUfKkwAJoSFuglTqJfbD/akFXcjLYAwJs0LHSn4Y9UhSxvjlebruAqjXdwO9KTTsz055w451pYQW5M5DB4CCHgcOml9kK9wZvvd4n3g2R/AVk82SW5oLX58EfxhHuYPtwm9nw1AS4yy6ipRdJiiK7JEy5yUTWLphytjmyfdQicDd6jKBh5HA1ahjY299bHMFhljpE/YPmkAa/1pAMwLbY/qcpkgN0gzQBnURdQB9IGqIDpA+ontEIVI6EIopGahH1MpIRhSLhQJWMeER9SEKiNsZTFch6i+NaGFmJKpCrBDh7N3pw9pkDwNhnSwD6KePlqODrk2KAXw8F0vy4BwBWUDggwNQAADAeAp0BKuABzQE+GQqEQaEE9k+wBABhLS3fj5MUeAP4AsgBLRp7yzlD/VM2ftt3t/u9F7+r07+/f9Py1upvPF/0fWD/Vv9j+znwI/sl6z//D67f3l9VP7j+tR/4vXX/mPUW/u//C64P95/Yf/dv1mv/n+8Hw9/2T/q/uT7Vv/i9gD//+2b/AP//xPf9R/Cf9TfjT8X/f/8h+Qv72esP419A/f/71+03+B/+f+3+v779/1P8X5FPUf7P/qf5z1M/j33g/Ff3r/Qf7j/EfuB81/8H/N/uN/m/Wn8n/jP+T/nvyp+Qv8Z/mv9+/t/7Uf4f/5/7L6rPuf/H/mfJs3z/V/9T/E/u78C/uF9a/yn99/zP+v/wv7je3L/k/6P2D/WP85/v/zL/z32A/z/+p/6T++/uP/e///9o/7T/e+QT+N/4v/f/3PwBfzT+2f6//F/5//zf53///a1/N/8v/Hf6f/4f6D/////4+/mn9//5H+O/0X/s/xv///+H6E/yP+kf53+4f5r/rf4n///+D7sP+v+f/0c/br/ofn/9IX6yf8H8+EkcV1FdwgcRMFgcYg6nnjrBWo5/9Tnwaw9F3atqg//2Rmnr/3b9NAn85Rt5+KtmdpIpEgDO0Hz9QLW4qb/oFrTn07EgzgdhHpYEVcq5VyrlXKuR9IULPT/72v/4aZP//h6j3xDb1kKgmF8zwhbInZjk1rV92a9WKo8OP6JG3r7zNkscjXh8s+bb9aZu9czrxrZ6om1SGQ94UB/U1IKc6K2wtxid+mZLUUWIib+9UqvuoruEYoxRijApp5LachOP//+sY83Uuyktd+pfOPRbZVbx1wfGY3zlwXST27/V+eBkTsuTTqfg//8a7pJ0n/FHhAo1+tedlE6xsi1sdh9BR2jdWIMt5UrDwJM0hKtA4otWYabVz/FB5i0MKEVcq5VyPpuQnqbGfaKSbTf4x6B88OiPHXO6Jwkr9Gt3T+Ql9mr6cM48sDIj7BrbVV/0o3aP//9t5LmDsFznZFZV4L6NaScwTOKTDFzDiaLjKabL3Tx6LKaLQQGi4xOp3kcjAufp3kcjAufpMcCTFVNqdHwU//v7HPPf/IX3SJEJxyHkHv7uHcOJt+N5W1MoL7ZHsI9+3Sf4gOXVHsEoeLBu/Y6SZVH6puJ9KenOkpetLP3e6Bfxewp/WHmOWmgnH2mLHNi+x0pBftihbnz+SRmW1OD3Ckx+7rxwPRHP1AUJiSqdUA0LvEsZNfKPFGdBC/TTYuFEFIMH9XKmdAxNHi/WntWSVD9KxQI6ePg9Y4qk8pbvQfO6pvKAPUeSlSC1ARMr9PSxTYB7SdHpBuVZID684ijtlHIeKvRX/hE+OE+zIbb/ueHdrE0KGjbV///+k36gC+uQyhvV//7bDDXi2xs1RxGS32hvT9MXCYjPTWJzxtxhgdfMXbW11BiBA9YPTKEoof0vGxB/jHd1CLFm2gC6wreuSwcvMK5e6CwOoQoRbJWcIapF9yHLCZGYP/ASvHqhkhzPgpVFyoViS811ueuvePtnqaqFQpIySZNXwY6QmEVjsC1sJcz+NbCBGPj9rbpK//fN07G4v4Hr+KWe2OpgD9uNuHo4oULYtdGRhyQtQaV7Zn3icovHCTuvd6hl1Y9/nKM6d4waNEzMgFlPija29hdAA66JILf2fb7MDdPfzrFH1wb1X8yrimp78PR02sfx9KD4Zak8ygBAVGeyEDIcJNil99A6mAwcscOtH8BVdH8b4STAz0e1FHHk2j1mDs+jRIbwhYaLpmT6+IdfH558mla98cErx7xPjn/yUg5bqLPVryGAojSzJy27VRKzBlqFlc1YPX5osKSb5vvFs3IC8qkUxSLciYTKVvzA00pswHibI4fwNQhCrmNxdhjowm++KGxR6HP48mqWaq+5PSZOT7A5JGJgraSUzncFtmVYJQJgyC3LEhAtk2vf42Kwr6LHRtR26UqNvnPyMLSp35cudts56ZTESf0xhVWj6iqad6gcIqw0Bfh8E2f0uhiZ/MbA9gZoUZ+UpDyZeMzfbYs4GwiFsVJqQfkzmmW2M5rJIAcYO3BEstwQ9ad8gXEK7cGx/NFc/e/WJjuR4kZzuIIFjT4ZUXS2+hBGSetcmfANQwPDtzmWxS3Gv5PlK080ZT0s5YQ5yZzKSrVMWBK9sJdhA7wLE2d7UWsTRWUCydYbMS17IpTFBPd1/rC9sjysj1gbVJdQY5lkpbnLCt02tCW6i18vMlWyDPBPbJFpd6uzB8Inkhv9CArwLzezGneCH3q4S54Kl1ROngdhNejDcrgid3MfId5NNgEUZWUdS9ho+Xfq3lU7By2nP+nQx1CB72FvnGMxJAiV84wKXDISUWP2SPaKSWgus8ajwZEf6VmIXtolt+hs3qHbfGjlQT7TxYIMYu3ZJXkZpLsLhyX3D5zBa7tt38hucdaABhMh4p4z01HH8Fa9Cv8d/i0uc30i7BAx+Mjt4IAsrJkP3sOKze69W692+2ZEr0fAeCtp6ftHO/ooJYIVQKg01dGUXM5v8HBSfG/PjNKXj0PGmAhms5xVCb22mEUQPMKckBvN8KTln/naP64zoAhiUa6sM16YLNd4Q5uwr813f8MuWRWBmCY4MHwlXI2ZAgPQD7LnysbJOhv/eWFTF/vN1m2N0bB092/jf+sEt3WOuDT8MaA08Wi59IY22G6SOShiloZY1/pfiWhKhG5cmLVEiLcioNS9xVQrcWe+T81BDdwyULu94LeMw1Y38BPPzmnrN/oIZ0RiJ0leN6GXKmC+VzXZB8T1NjWUtRzgezxO3RoLi6OzSPh/b8Zm6F6tKPxsiQ6JxW5S/ZnRcDeidTunkSUnSkDZs6JI55hED8GBOZqtR01X7NZyEC6XHnFDX/6vYnc0DGf9Zc0viZpqzukGMzTw0N7XQBnhDEIFfJcsA0LKZ4apQRQT5VvpWtZv12LXqKSIRQK/+EePUs06UV+uNt+UACuUl4L1s/Fo/qBmf4F19rFMzymAkWekhlXtPh5EF3WHwve/wSoIj9QdSg0L86uVzBNG7zul2FnFS0uY4UKPy07L03mns6Wq6lRIqDR4qtXGibSOR8uLrWHWqM05xNkXuMmPO+g6vzsTl8xtBfrnVnTTnvmE92DOha0LE6YPOlvdntpdRBkL/w2vv1uXp07aS9iojVnIQ83tpWyxZCJhyOWHHbcijiZekdiyu6wLdiOV3swUfqAmz8c06Ty3QzIsCoT7/YgO9VYrBiRDO5nTmVFUtyMGwzTciCYb0y6yLm4TCYWWZ1xqO69FXIOefbXZlnskZiRK/dGqV34jm2lhDlpWEbs2+EZZ9PE6iXBt5kAHSajVwLyFRq3jmb7Mxk4KxvaZv+9rMhI/3YOTTlOcOwn201voP96w1goqjnpHsfRNmYbkc9a8eIp4vkEQZF7rtRZ0e8L185f72si+bXwnkktjC1d6B1ZUUmLfwbq9D1OfdIVc6Rm6U4tRSdsW1Uq72RnKC14F0n9oDZbDS5Pq+JVHmcwAgHy8YGBeu6OadYnekw+39/ADZlmg4tUOfHA9iwQVuTrTDcTSvcjq/lJY6wWXppro/+Er7GBIQXxWoxCw4AF1q3nNlxzLsNWcgMNnro8g5z+jkhcZYcc6Z3S+mRLFnJeSEVmeKhluyBIf7ZS+L595BeF73KKyo79AKy4gBuFvcaFRpdoPOm99asKm4szoAQz6nFNz9PmVGC87YEWpd1Rwe2/S9f5wZNItNWkje0deWWx6x2VEee9r9V9chyRlymI1jFGvPa20mmFVeaXabXCDOMscuk3/Mlg+LLRvnum1oZBeCbt04JQjuPrSJq1GIDrwjkFI/Ac4oamAtTE85CUaS0bl2RUbQPCwOxAKGa9yvuaw6CDgTxCi5EkD/KWRvFYYYuDlgex4VCVVCslLd8jumQXtJZ+kMeTEOqurX7XZ2Z0elpjeN/w4oKIxtlTomiRxYnnf1TyP63U8RLidm+eM2HBjCCIgaWNnl+cdq4Es9sCOjVSlk5C2rgk1BCrxPneV2NJw9PJnaU0HdpZ0J5Q0fseQw/3VW8SZ4LcDKEooX/Z3yyGlBoFciFk1qb68C1nkzX7pdb94aDVdJupgpnmgHRG4ou/hR6joL0q1Cs4qiOjfGz1go/RxZF9Z2oB54SDT52NtAdESJ6mP/brYIQno8l4fm+85GyTxdMvzKAOeHkfMfEdIz0D2jGnlmLwQ3C+7wylUJKyiD50Ht9OmN5F3r5mQ3yXzMLP/A/N5vZ/d/jb1zItidxr9SKLY8XIdTJBGH/a4s3Msqo7M3OpDZKH7oKXmKVP+TG+qV/vEbh/AW5/gPabdK6O4BP1gTZABF/IG4rJ5MT5PSIQqAac94FgIOduMIQ6SNWSz4WtycD0poETQcG9cKf/94+uyBv/sk2otvRfdmyL036lkK91IJiRA8WFn0IyncNfLU1yn4XVwxXHs9bkCmdJ40AyA0UWgF9RHnNw+iVdkCr0JcofDvX9vN8p9hkMuZr0lTMIXhV5MfxDCkc7ulBme+noGnOzO94+vLPEIbHwTOjHflQbUKr4gCHkcZMPMOe8nHhqMbwK2yaVT6cRIeWuqmngWFNN/8exX6U/lrO6t2CPSK3m5YcCKFne/JNTAMq9OV5INw6FKFyGgCW5yeEerK14o1paiGFvTTXJxovgluCVZKg7+/TrMD+Zfu3DvKIxQNd91Ekuo0UhLTxOeMBhW6UB68dLcpkXk1AuFPNMkMRKA90E04K4mp84PNkNreDz9cnRu/YUUodo2ereIAMW9aOqtpgQN+b4ZiH/9Qq09D1qcRp7S+oCq01lA/UPNNgU+IC/Ush1R9E9puYKNX4bEgLkHZKNuxEnixUUcEuxLvR263kbYbY1NiNtpZh04MhAPK9qw1qwKEcy5HeZejMC4tELDA/vCnS1aLDzrv1FobhWJpbu4j8O8wpoVsrZLvTG8i20wvcYHWmUiBuDmC9GZ0nx+GevrkZ0vJcsTbjKeJwSxTTPsAM//7uKJOeft/nAvU4pYyMpE/+za/pU2EpYfzNMyt51mbhosoaYGI4wi8UgCmnuo640ImT1a8He38yZto9/jANL5wUzcSvhGKMLsmjXXgxjYVWcHjgwoq8Q5Mi9joP2cZOa52CofvqdNtZkwWByjJCH6w3Qx1JBr1F2WWSL/tsgE/InMo3JQ/A9xHcKDaklobOSqSEWfOCTFCEgd1Uhj5h3YJbxhlR7UizJe/Uzf6V22WRjM+qvq1uPJyVtQaWRj0W7bTO9R+mEChoyJhlSPstkTvTAFo6VAMYqX+QvFObGhFCn1xCT7UwKWa+qKnI/AO4zJmK5qC1A14v8xdz//+hMekcMlmnB5Z82+K0EO0jXPs+ZpyzoVkzqOtWIKnm4zPeC9lWO10YcZkIatCYIkSHJQWizkfqDUUQoaLtJhl+qMpNv1hHg5zOoKHD5iR+aHXC/oYLIgC2J+XrlIl/yi1X+/PNSIdAigcA8CtN0l2PLmpG8PchI02cvdc2jyK0KOjE5UGFYdASpEuLWgtMtQe246MNplm7ULd9aPoe9eMfliIV3CMUYoxRiga67Xx0i0f7Sm67yD0F16lPi1h26uyCW96ThJP8ggmqUTE5451FACF3y6hwriWgxSO8tTOl2pxEUt98C41kmA+mbhz43EM1br9/zxhfv//4EU3hmkZvY7ONwJJebJeYgUQohRCiFEWMC2lYF9sgTCRsja9vpDeLZ6SPJVJHM/iMo1SSL6gJudu7/KOY4UqQMasBxBicyd/r2/tPbQc3w7Z99P/+teESARVyrlVQAP72D9ABRAJgtpU2UJxYjUrgGJkBbnN31Nwnvt0+82WzzOxjtBAtGMWPzdu974z7wNx4w4twVQ/kbIOLQmzUibZWXq/slq6/tLBGNO6LBruYj2afw2tf49UJPnMzIXhXYs2qwzzFaUV4sYQ1/IjEKQ4cgckz1wJ7TWdxcF0qD3vJfDwcz9HGwGsfwOnVtgoGoiMFnHea3yLmNtx/b6ax3m/hUQAraFdmuPS0gxc0FC96QI4HQR11iXwqAzAbbG2kcb7Sgmj9AYcW3dnIyidkaPrvpv7RWoN6cuex2HgI0/wZ0sY9gUqjWrzOig/84todoQfqKRlvMIrpjS+AtIJGcdg1J07G2g8L5Doee3VbjJ351S2H+n+IhnH2cuykfW1/faHhCy2b7p+ZZ9Y6OaJxbQgB3Kx7ZDQXOM4Yo4nwPdwQXqA4tSuAnqxIGFjHEW3MEeuuWJmRCtybpnhrDBrr+j0KXEIUPG239Z9B6R/rz4RZWcjbdkdWpHYpEsjkHyNsLzIwk/tOt2UtP+0+9TY32YkGIxzyQfUypPdDMKgslLtAMmnTIcY7U0HvUJwkiw5XDcJ3pd9vmUVB7whatcCYeqOyT2/33Asx/wZ9p7ok2TJNBYLXdt/MZ8GSegsmScdvXX05cr0gmyvTM0gt2UVLR2DHf/xVwEKAn5How2cCdNC7ChRLdT9RE1MEsUvSt5ScQdFR+ZKa8SI+3WzbRjiiRhX9KWa2Xvy17BXNNcWTkbl7+JqmrdTFzSUP5gksWAoueGQYh1uTWaHc1M30fbw8GLhSXWKTaGiZWKQ5Ea3/tp6ZWQmtxsIuKKXf1O2vdrVdhKuR8FpuDdl31zahVS5uNH3xL2UdhuaaouSeO4gQKrPw+phv++OpMfJZRk/9TPBV3t0ocZJoco9gXFhnk7Wa4gEdI9GEWOX5lCiKK5UKxr/51K0EOYMvaFVUYUD8HvmpbHb+wtdFrIeVH9rZ1FqDsyncaOcZc2Oa0XrC/2Rks0nDQ4eQ/yq7D4j/vZKMTHl0DSzEvfOlzbcJ6lQbV/yjajw+QF/KkkWxp8HfC8gAAAgvlIo2eAcQrLKVeBEUu8kIXes7FgbfhgX0/c+lCdWGztpXZh+5HAB5zGyGqmuKNAGATB3VMNZRqEDlRX8oGoxCZC6lf5Geli22IxbOyH4sLFLseT+lZOsI/K2OOWARTzWd0DgrVrMnc4HffHGJuAM077rB2fSN14Eyz6u28eSMkZtCirLBUV9cSyyIBlGihflil3QMTrRgtw1pSOctGJW/NWmQHiM/vdMnIwjZ491EkfGYJyqYt+KkIfXpJ7CUynxYcUtSkla7Vc8+fS4ZvjKAuWWIDGwL371u+5Wgz89G0PwgkVWtgz/iXmPZeSqBNZC9GPQ2UOQgVQoUPlgpLgoLZJ3sv55LOxbAMtWQxE7nv+HWWTxvbFUYqpjFwAkKo2HarpPqUkOLRcaEQi1J5+Qrl5TNH3d1hyoCc99s449zaMmoIogtTsJsn2+Twh2f580aqCJEFKr2ElV+WufQgpiPN7a1vdJ6Q16K7hpEIOM2osgRc9swR897BCQgYyqT4Tf3WD4NPX5+ISnHi1rFPY43pnpa2Y3XgcZTsr+xAhonbB0qir+IzZTRvElwrBbVtpdq/TtVZnGzsDfaFiZWe46+atEaemoAkNYB1daWckYAr5z5WpFUQLEZm5kTbTBrSRbob4qMUSzvhEkYj8U+w+pBoy4FOpHS24WApDgshlWOY/Wb+AqyEzRqKvLMpEIlZW0ikoqduoyfzTvg0ulpsIdI0lhZmWHT50kRgTqmjO/C1hh3e2tDeEyq1gp4mmHd+y0yK+ivh30as8Y0uLq3VXnHdlHFoExX/bqZrhiVCeu/5s6PVMk662ms1BmTDCbvNiQ0cYs7j6RbUBEky1SsHibG9QSrttc+/xZ0OPAuXYbGuLaNIf5p8T06hhBXGbU0U0pJFWTahM2uYHuFs17m8oNQAJyOlROoGv5Q88zVs+MXuT3BD1OHKfr4jxP/QEJqKQpxEApJKw4Lxz0FBZ0py2oowAqJ+tmSBZvDAhbtVrVZwrBK8oOH0XQ0Lsb2Iz1EDyD/PS70pjytN3yIp1Q8i0e4PhWrAzpr+38+p3l0ppvvOHk/48J3eSV4PPqLL2BK0xMT5qo9YFURVpjxsqYWOO0fK/gJ7Ixpb8AQ4kQG4gLsk71fNGFfPpN+qhmeHW7m/WhNfTr/S8VSQEmXVrtUdfGeSvH9XKI5HO5Mlb3EOjUsLzopf0PmTTw799u/Y5p/vb4SyJ7uQMlhZYVe3mvv7CfP5HyEjsiSGYC/Akdh756bINHU2cRhZveVPd5a5Bo6FIAD7A1KnTc4QKbtdf4bXUpq08zy0ekepQYLAlxx8CnEG0q0n/1EOhTXlbvqPqKE5KW4c6aXISIApyexksFUcguAjksYRCy0zGm3MP6cdZLPWVY+Xk5Nk5Eslm6LRFb/ITOOkY6RBAK" alt="Rollo de Acero">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Rollo de Acero Industrial">
     </div>
   </div>
 </section>
 
-<!-- ============ POR QUE ELEGIRNOS ============ -->
-<section id="nosotros">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">// Nuestra Ventaja</span>
-      <h2>Por qué los clientes nos eligen</h2>
-      <p>Compromiso con el suministro continuo de materia prima para la industria.</p>
-    </div>
-
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <h3>Calidad Certificada</h3>
-        <p>Garantizamos las especificaciones de calibre, peso y acabado en cada rollo entregado.</p>
-      </div>
-      <div class="why-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <h3>Logística Eficiente</h3>
-        <p>Envíos y entregas coordinadas para mantener activa tu línea de producción sin demoras.</p>
-      </div>
-      <div class="why-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        <h3>Precio por Kilo</h3>
-        <p>Tarifas transparentes calculadas sobre peso real con precios altamente competitivos.</p>
-      </div>
-      <div class="why-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <h3>Atención Inmediata</h3>
-        <p>Respuesta rápida por WhatsApp y soporte técnico para seleccionar el material adecuado.</p>
-      </div>
-    </div>
+<!-- CATALOGO -->
+<section id="catalogo" class="wrap">
+  <div class="section-head">
+    <span class="eyebrow">// Inventario Disponible</span>
+    <h2>Catálogo de Productos</h2>
+    <p>Selecciona un material para consultar sus especificaciones completas o realizar una cotización directa.</p>
   </div>
-</section>
 
-<!-- ============ CATALOG ============ -->
-<section id="catalogo">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">// Catálogo de Productos</span>
-      <h2>Materiales Disponibles</h2>
-      <p>Selecciona una categoría para filtrar o haz clic en cualquier producto para ver especificaciones y cotizar.</p>
+  <div class="catalog-toolbar">
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterCatalog('all')">Todos</button>
+      <button class="filter-btn" onclick="filterCatalog('rollo')">Rollos</button>
+      <button class="filter-btn" onclick="filterCatalog('lamina')">Láminas</button>
     </div>
-
-    <div class="catalog-toolbar reveal">
-      <div class="filters" id="filters">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <!-- Dynamic filter buttons inserted by JS -->
-      </div>
-      <div class="status-line" id="statusLine">Cargando productos...</div>
-    </div>
-
-    <div class="grid" id="grid">
-      <!-- Dynamic product cards inserted by JS -->
-    </div>
+    <div class="status-line">Materiales con disponibilidad inmediata</div>
   </div>
-</section>
 
-<!-- ============ PROMO BANNER ============ -->
-<section>
-  <div class="wrap">
-    <div class="promo reveal">
-      <div class="promo-text">
-        <span class="eyebrow">// Cotizaciones Mayoreo</span>
-        <h3>¿Necesitas un volumen especial o calibres específicos?</h3>
-        <p>Contáctanos directamente. Te enviamos cotización formal el mismo día.</p>
+  <div class="grid" id="catalogGrid">
+    <!-- Card 1 -->
+    <div class="card" data-cat="rollo" onclick="openModal('Rollo de Acero Galvanizado', 'Rollo de acero recubierto de zinc para máxima resistencia a la corrosión en intemperie.', 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80', 'G30 / G60 / G90', '3ft / 4ft', 'Calibre 14 a 30', 'Cotizar por Kg')">
+      <div class="card-media">
+        <span class="badge">Popular</span>
+        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Rollo Galvanizado">
       </div>
-      <a href="https://wa.me/528180290312" class="btn btn-primary" target="_blank">Contactar a Ventas</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">
-          <img class="logo-mark" src="data:image/webp;base64,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" alt="Logo">
-          <span>METHISA</span>
+      <div class="card-body">
+        <span class="card-cat">Rollo</span>
+        <h3>Rollo Galvanizado</h3>
+        <p class="card-desc">Excelente durabilidad y resistencia al óxido. Ideal para techado y perfiles.</p>
+        <div class="card-foot">
+          <div class="card-price">Cotizar<small>Precio x Kg</small></div>
+          <span class="card-link">Detalles &rarr;</span>
         </div>
-        <p>Soluciones integrales en distribución de acero en rollo para la industria manufacturera y de la construcción.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Navegación</h4>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-
-      <div class="footer-col" id="contacto">
-        <h4>Contacto Directo</h4>
-        <a href="https://wa.me/528180290312" target="_blank">WhatsApp: +52 81 8029 0312</a>
-        <a href="mailto:ventas@methisa.com">ventas@methisa.com</a>
-        <span style="display:block;font-size:.85rem;color:var(--text-muted);margin-top:6px;">Monterrey, N.L., México</span>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>© 2026 METHISA. Todos los derechos reservados.</span>
-      <span>Catálogo de Rollos de Acero</span>
+    <!-- Card 2 -->
+    <div class="card" data-cat="rollo" onclick="openModal('Rollo de Acero Rolado en Caliente', 'Acero laminado a altas temperaturas, versátil para la fabricación estructural e industrial.', 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=800&q=80', 'A36 / Comercial', '3ft / 4ft / 5ft', 'Calibre 3/16 a 1/2', 'Cotizar por Kg')">
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=800&q=80" alt="Rollo Caliente">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Rollo</span>
+        <h3>Rollo Rolado en Caliente (LAC)</h3>
+        <p class="card-desc">Resistencia estructural superior para transformación industrial pesada.</p>
+        <div class="card-foot">
+          <div class="card-price">Cotizar<small>Precio x Kg</small></div>
+          <span class="card-link">Detalles &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card" data-cat="lamina" onclick="openModal('Lámina Galvanizada Lisa', 'Láminas cortadas a medida con recubrimiento protector anticorrosivo.', 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80', 'Galvanizada', '3x8, 4x8, 4x10 ft', 'Calibre 18 a 28', 'Cotizar por Hoja/Kg')">
+      <div class="card-media">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Lámina Lisa">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Lámina</span>
+        <h3>Lámina Lisa Galvanizada</h3>
+        <p class="card-desc">Corte perfecto para ductos, carrocerías y gabinetes metálicos.</p>
+        <div class="card-foot">
+          <div class="card-price">Cotizar<small>Precio x Kg</small></div>
+          <span class="card-link">Detalles &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card" data-cat="rollo" onclick="openModal('Rollo Decapado', 'Acero libre de escama mediante baño de ácido, superficie óptima para pintura y troquelado.', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80', 'Decapado y Aceitadas', '3ft / 4ft', 'Calibre 12 a 24', 'Cotizar por Kg')">
+      <div class="card-media">
+        <span class="badge">Especial</span>
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Rollo Decapado">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Rollo</span>
+        <h3>Rollo Decapado (LAF/LAC)</h3>
+        <p class="card-desc">Acabado limpio, ideal para estampado, troquelado y pintura posterior.</p>
+        <div class="card-foot">
+          <div class="card-price">Cotizar<small>Precio x Kg</small></div>
+          <span class="card-link">Detalles &rarr;</span>
+        </div>
+      </div>
     </div>
   </div>
-</footer>
+</section>
 
-<!-- ============ MODAL DETALLE ============ -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
+<!-- MODAL DE DETALLES -->
+<div class="modal-overlay" id="productModal" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModalDirect()">&times;</button>
     <div class="modal-media">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="sheen"></div>
-      <img id="modalImg" src="" alt="Producto">
+      <img id="mImg" src="" alt="Producto">
     </div>
     <div class="modal-body">
-      <div class="modal-cat" id="modalCat">Categoría</div>
-      <h2 id="modalTitle">Nombre del Producto</h2>
-      <p class="modal-desc" id="modalDesc">Descripción completa del producto...</p>
-
+      <span class="modal-cat" id="mCat">Categoría</span>
+      <h2 id="mTitle">Nombre del Producto</h2>
+      <p class="modal-desc" id="mDesc">Descripción detallada del material.</p>
+      
       <table class="spec-table">
-        <tr>
-          <td>Calibre</td>
-          <td id="modalCalibre">-</td>
-        </tr>
-        <tr>
-          <td>Peso Total</td>
-          <td id="modalPeso">-</td>
-        </tr>
-        <tr>
-          <td>Ancho / Medida</td>
-          <td id="modalMedida">-</td>
-        </tr>
+        <tr><td>Acabado / Norma</td><td id="mSpec1">-</td></tr>
+        <tr><td>Anchos Estándar</td><td id="mSpec2">-</td></tr>
+        <tr><td>Calibres</td><td id="mSpec3">-</td></tr>
       </table>
 
-      <div class="modal-price">
-        <small>Precio Total Estimado</small>
-        <span id="modalPrice">$0.00 MXN</span>
-      </div>
-
-      <a href="#" class="wa-btn" id="modalWaBtn" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        Cotizar este Rollo por WhatsApp
+      <div class="modal-price" id="mPrice">Cotizar<small>Atención Inmediata</small></div>
+      <a href="https://wa.me/528180290312" target="_blank" class="wa-btn" id="mWaLink">
+        Solicitar Cotización Directa
       </a>
     </div>
   </div>
 </div>
 
-<!-- ============ WA FLOAT ============ -->
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <span id="brandName">METHISA</span>
+      </div>
+      <p>Soluciones integrales en acero, rollos y láminas metálicas para la industria.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <a href="#catalogo">Rollos Galvanizados</a>
+      <a href="#catalogo">Rollos en Caliente</a>
+      <a href="#catalogo">Láminas Lisas</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="https://wa.me/528180290312" target="_blank">WhatsApp Directo</a>
+      <a href="#">Ventas e Informes</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div>&copy; 2026 METHISA. Todos los derechos reservados.</div>
+    <div>Siderurgia & Distribución</div>
+  </div>
+</footer>
+
 <a href="https://wa.me/528180290312" class="wa-float" target="_blank" title="Cotizar por WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
 </a>
 
-<!-- ============ SCRIPT JS ============ -->
 <script>
-// Imagen del rollo en base64 para uso general
-const DEFAULT_COIL_IMG = "data:image/webp;base64,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";
+function filterCatalog(category) {
+  const cards = document.querySelectorAll('.card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
 
-// NUEVO CATÁLOGO DE PRODUCTOS
-const PRODUCTS = [
-  {
-    id: 1,
-    nombre: "Rollo Galvanizado Cal. 23",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 23 y peso 16,590 kg. Medida: 64.9606\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 23, con un peso total de 16,590 kg. Medida: 64.9606\" de ancho. Precio calculado a $13.50 MXN por kilogramo.",
-    precio: "$223,965.00",
-    calibre: "23",
-    peso: "16,590.00 kg",
-    medida: "64.9606\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 2,
-    nombre: "Rollo Galvanizado Cal. 13",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 13 y peso 16,240 kg. Medida: 35.84\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 13, con un peso total de 16,240 kg. Medida: 35.84\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$219,240.00",
-    calibre: "13",
-    peso: "16,240.00 kg",
-    medida: "35.84\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 3,
-    nombre: "Rollo Decapado Cal. 8",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 8 y peso 14,100 kg. Medida: 35.4331\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 8, con un peso total de 14,100 kg. Medida: 35.4331\" de ancho. Precio calculado a $13.50 MXN por kilogramo.",
-    precio: "$190,350.00",
-    calibre: "8",
-    peso: "14,100.00 kg",
-    medida: "35.4331\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 4,
-    nombre: "Rollo Decapado Cal. 8",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 8 y peso 8,315 kg. Medida: 35.4331\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 8, con un peso total de 8,315 kg. Medida: 35.4331\" de ancho. Precio calculado a $13.50 MXN por kilogramo.",
-    precio: "$112,252.50",
-    calibre: "8",
-    peso: "8,315.00 kg",
-    medida: "35.4331\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 5,
-    nombre: "Rollo Decapado Cal. 8",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 8 y peso 16,560 kg. Medida: 35.4331\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 8, con un peso total de 16,560 kg. Medida: 35.4331\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$223,560.00",
-    calibre: "8",
-    peso: "16,560.00 kg",
-    medida: "35.4331\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 6,
-    nombre: "Rollo Decapado Cal. 8",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 8 y peso 16,590 kg. Medida: 35.4331\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 8, con un peso total de 16,590 kg. Medida: 35.4331\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$223,965.00",
-    calibre: "8",
-    peso: "16,590.00 kg",
-    medida: "35.4331\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 7,
-    nombre: "Rollo Galvanizado Cal. 10",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 10 y peso 16,928 kg. Medida: 45.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 10, con un peso total de 16,928 kg. Medida: 45.80\" de ancho. Precio calculado a $13.50 MXN por kilogramo.",
-    precio: "$228,528.00",
-    calibre: "10",
-    peso: "16,928.00 kg",
-    medida: "45.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 8,
-    nombre: "Rollo Galvanizado Cal. 10",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 10 y peso 19,647 kg. Medida: 45.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 10, con un peso total de 19,647 kg. Medida: 45.80\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$265,234.50",
-    calibre: "10",
-    peso: "19,647.00 kg",
-    medida: "45.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 9,
-    nombre: "Rollo Galvanizado Cal. 10",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 10 y peso 18,738 kg. Medida: 45.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 10, con un peso total de 18,738 kg. Medida: 45.80\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$252,963.00",
-    calibre: "10",
-    peso: "18,738.00 kg",
-    medida: "45.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 10,
-    nombre: "Rollo Galvanizado Cal. 16",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 16 y peso 11,260 kg. Medida: 40.70\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 16, con un peso total de 11,260 kg. Medida: 40.70\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$152,010.00",
-    calibre: "16",
-    peso: "11,260.00 kg",
-    medida: "40.70\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 11,
-    nombre: "Rollo Decapado Cal. 12",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 12 y peso 19,513 kg. Medida: 41.74\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 12, con un peso total de 19,513 kg. Medida: 41.74\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$263,425.50",
-    calibre: "12",
-    peso: "19,513.00 kg",
-    medida: "41.74\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 12,
-    nombre: "Rollo Galvanizado Cal. 10",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 10 y peso 3,131.22 kg. Medida: 36\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 10, con un peso total de 3,131.22 kg. Medida: 36\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$42,271.47",
-    calibre: "10",
-    peso: "3,131.22 kg",
-    medida: "36\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 13,
-    nombre: "Rollo Decapado Cal. 10",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 10 y peso 21,740 kg. Medida: 44.6851\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 10, con un peso total de 21,740 kg. Medida: 44.6851\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$293,490.00",
-    calibre: "10",
-    peso: "21,740.00 kg",
-    medida: "44.6851\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 14,
-    nombre: "Rollo Decapado Cal. 10",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 10 y peso 8,215 kg. Medida: 45.157\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 10, con un peso total de 8,215 kg. Medida: 45.157\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$110,902.50",
-    calibre: "10",
-    peso: "8,215.00 kg",
-    medida: "45.157\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 15,
-    nombre: "Rollo Decapado Cal. 13",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 13 y peso 11,410 kg. Medida: 31.1417\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 13, con un peso total de 11,410 kg. Medida: 31.1417\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$154,035.00",
-    calibre: "13",
-    peso: "11,410.00 kg",
-    medida: "31.1417\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 16,
-    nombre: "Rollo Galvanizado Cal. 12",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 12 y peso 19,114 kg. Medida: 51.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 12, con un peso total de 19,114 kg. Medida: 51.80\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$258,039.00",
-    calibre: "12",
-    peso: "19,114.00 kg",
-    medida: "51.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 17,
-    nombre: "Rollo Galvanizado Cal. 12",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 12 y peso 18,928 kg. Medida: 51.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 12, con un peso total de 18,928 kg. Medida: 51.80\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$255,528.00",
-    calibre: "12",
-    peso: "18,928.00 kg",
-    medida: "51.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 18,
-    nombre: "Rollo Galvanizado Cal. 12",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 12 y peso 19,091 kg. Medida: 51.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 12, con un peso total de 19,091 kg. Medida: 51.80\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$257,728.50",
-    calibre: "12",
-    peso: "19,091.00 kg",
-    medida: "51.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 19,
-    nombre: "Rollo Galvanizado Cal. 12",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo galvanizado, calibre 12 y peso 19,019 kg. Medida: 51.80\" de ancho.",
-    descripcion_completa: "Rollo galvanizado de acero, calibre 12, con un peso total de 19,019 kg. Medida: 51.80\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$256,756.50",
-    calibre: "12",
-    peso: "19,019.00 kg",
-    medida: "51.80\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 20,
-    nombre: "Rollo Decapado Cal. 12",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 12 y peso 12,575 kg. Medida: 41.84\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 12, con un peso total de 12,575 kg. Medida: 41.84\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$169,762.50",
-    calibre: "12",
-    peso: "12,575.00 kg",
-    medida: "41.84\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 21,
-    nombre: "Rollo Decapado Cal. 6",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 6 y peso 9,725 kg. Medida: 48\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 6, con un peso total de 9,725 kg. Medida: 48\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$131,287.50",
-    calibre: "6",
-    peso: "9,725.00 kg",
-    medida: "48\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 22,
-    nombre: "Rollo Decapado Cal. 6",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 6 y peso 10,720 kg. Medida: 37.43\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 6, con un peso total de 10,720 kg. Medida: 37.43\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$144,720.00",
-    calibre: "6",
-    peso: "10,720.00 kg",
-    medida: "37.43\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 23,
-    nombre: "Rollo Decapado Cal. 6",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 6 y peso 11,090 kg. Medida: 37.43\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 6, con un peso total de 11,090 kg. Medida: 37.43\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$149,715.00",
-    calibre: "6",
-    peso: "11,090.00 kg",
-    medida: "37.43\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 24,
-    nombre: "Rollo Decapado Cal. 6",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 6 y peso 10,740 kg. Medida: 37.43\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 6, con un peso total de 10,740 kg. Medida: 37.43\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$144,990.00",
-    calibre: "6",
-    peso: "10,740.00 kg",
-    medida: "37.43\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  },
-  {
-    id: 25,
-    nombre: "Rollo Decapado Cal. 6",
-    categoria: "Rollo de acero",
-    descripcion_breve: "Rollo decapado, calibre 6 y peso 16,050 kg. Medida: 37.43\" de ancho.",
-    descripcion_completa: "Rollo decapado de acero, calibre 6, con un peso total de 16,050 kg. Medida: 37.43\" de ancho. Precio calculated a $13.50 MXN por kilogramo.",
-    precio: "$216,675.00",
-    calibre: "6",
-    peso: "16,050.00 kg",
-    medida: "37.43\" ancho",
-    imagen: DEFAULT_COIL_IMG
-  }
-];
-
-// STATE
-let currentFilter = "all";
-
-// RENDER FILTERS
-function initFilters(){
-  const filtersContainer = document.getElementById("filters");
-  const categories = [...new Set(PRODUCTS.map(p => p.categoria))];
-
-  categories.forEach(cat => {
-    const btn = document.createElement("button");
-    btn.className = "filter-btn";
-    btn.dataset.filter = cat;
-    btn.textContent = cat;
-    filtersContainer.appendChild(btn);
-  });
-
-  filtersContainer.addEventListener("click", e => {
-    if(e.target.classList.contains("filter-btn")){
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-      e.target.classList.add("active");
-      currentFilter = e.target.dataset.filter;
-      renderProducts();
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.cat === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
     }
   });
 }
 
-// RENDER PRODUCTS
-function renderProducts(){
-  const grid = document.getElementById("grid");
-  const statusLine = document.getElementById("statusLine");
+function openModal(title, desc, imgSrc, spec1, spec2, spec3, price) {
+  document.getElementById('mTitle').innerText = title;
+  document.getElementById('mDesc').innerText = desc;
+  document.getElementById('mImg').src = imgSrc;
+  document.getElementById('mSpec1').innerText = spec1;
+  document.getElementById('mSpec2').innerText = spec2;
+  document.getElementById('mSpec3').innerText = spec3;
+  document.getElementById('mPrice').innerHTML = price + '<small>Precios Sujetos a Cambios</small>';
+  
+  const waMsg = encodeURIComponent(`Hola, me interesa solicitar una cotización de: ${title}`);
+  document.getElementById('mWaLink').href = `https://wa.me/528180290312?text=${waMsg}`;
+  
+  document.getElementById('productModal').classList.add('open');
+}
 
-  const filtered = currentFilter === "all" 
-    ? PRODUCTS 
-    : PRODUCTS.filter(p => p.categoria === currentFilter);
-
-  statusLine.textContent = `MOSTRANDO ${filtered.length} DE ${PRODUCTS.length} PRODUCTOS`;
-
-  if(filtered.length === 0){
-    grid.innerHTML = `<div class="empty-state">No se encontraron productos en esta categoría.</div>`;
-    return;
+function closeModal(e) {
+  if (e.target.id === 'productModal') {
+    document.getElementById('productModal').classList.remove('open');
   }
-
-  grid.innerHTML = filtered.map(p => `
-    <div class="card" onclick="openModal(${p.id})">
-      <div class="card-media">
-        <span class="badge">CAL. ${p.calibre}</span>
-        <div class="sheen"></div>
-        <img src="${p.imagen}" alt="${p.nombre}">
-      </div>
-      <div class="card-body">
-        <div class="card-cat">${p.categoria}</div>
-        <h3>${p.nombre}</h3>
-        <p class="card-desc">${p.descripcion_breve}</p>
-        <div class="card-foot">
-          <div class="card-price">
-            <small>Precio total</small>
-            ${p.precio}
-          </div>
-          <span class="card-link">Detalles →</span>
-        </div>
-      </div>
-    </div>
-  `).join("");
 }
 
-// MODAL CONTROLS
-const modalOverlay = document.getElementById("modalOverlay");
-const modalClose = document.getElementById("modalClose");
-
-function openModal(id){
-  const p = PRODUCTS.find(item => item.id === id);
-  if(!p) return;
-
-  document.getElementById("modalImg").src = p.imagen;
-  document.getElementById("modalCat").textContent = p.categoria;
-  document.getElementById("modalTitle").textContent = p.nombre;
-  document.getElementById("modalDesc").textContent = p.descripcion_completa;
-  document.getElementById("modalCalibre").textContent = p.calibre;
-  document.getElementById("modalPeso").textContent = p.peso;
-  document.getElementById("modalMedida").textContent = p.medida;
-  document.getElementById("modalPrice").textContent = p.precio;
-
-  const waMsg = encodeURIComponent(`Hola METHISA, me interesa cotizar el producto: ${p.nombre} (Peso: ${p.peso}, Medida: ${p.medida}, Precio: ${p.precio}).`);
-  document.getElementById("modalWaBtn").href = `https://wa.me/528180290312?text=${waMsg}`;
-
-  modalOverlay.classList.add("open");
+function closeModalDirect() {
+  document.getElementById('productModal').classList.remove('open');
 }
-
-modalClose.addEventListener("click", () => modalOverlay.classList.remove("open"));
-modalOverlay.addEventListener("click", e => {
-  if(e.target === modalOverlay) modalOverlay.classList.remove("open");
-});
-
-// REVEAL ON SCROLL
-function initReveal(){
-  const reveals = document.querySelectorAll(".reveal");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("in");
-      }
-    });
-  }, { threshold: 0.1 });
-
-  reveals.forEach(r => observer.observe(r));
-}
-
-// INIT
-document.addEventListener("DOMContentLoaded", () => {
-  initFilters();
-  renderProducts();
-  initReveal();
-});
 </script>
+
 </body>
 </html>
