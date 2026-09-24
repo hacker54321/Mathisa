@@ -576,16 +576,28 @@ function renderWhy(){
 
 /* ---------- render: catalog ---------- */
 function renderFilters(){
-  const cats = ["Todos", ...new Set(ALL_PRODUCTS.map(p=>p.categoria).filter(Boolean))];
+  const cats = ["Todos", "CINTAS DE ACERO", ...new Set(ALL_PRODUCTS.map(p=>p.categoria).filter(Boolean))];
   const bar = document.getElementById('filterBar');
   bar.innerHTML = cats.map(c=>`<button class="filter-btn ${c===ACTIVE_FILTER?'active':''}" data-cat="${c}">${c}</button>`).join("");
   bar.querySelectorAll('.filter-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{ ACTIVE_FILTER = btn.dataset.cat; renderFilters(); renderGrid(); });
+    btn.addEventListener('click', ()=>{
+  ACTIVE_FILTER = btn.dataset.cat;
+  renderFilters();
+  renderGrid();
+});
   });
 }
 function renderGrid(){
   const grid = document.getElementById('catalogGrid');
-  const list = ACTIVE_FILTER === "Todos" ? ALL_PRODUCTS : ALL_PRODUCTS.filter(p=>p.categoria===ACTIVE_FILTER);
+ const visible = ALL_PRODUCTS.filter(p => {
+  if (ACTIVE_FILTER === "Todos") return true;
+
+  if (ACTIVE_FILTER === "CINTAS DE ACERO") {
+    return String(p.nombre || "").toLowerCase().includes("cinta");
+  }
+
+  return p.categoria === ACTIVE_FILTER;
+});
   if(!list.length){
     grid.innerHTML = `<div class="empty-state">No hay productos en esta categoría por ahora.</div>`;
     return;
