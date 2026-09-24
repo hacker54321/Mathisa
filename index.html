@@ -465,6 +465,9 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;}
 </div>
 
 <script>
+let ALL_PRODUCTS = [];
+let ACTIVE_FILTER = "Todos";
+let SEARCH_QUERY = "";
 /* =========================================================================
    ⚙️  CONFIGURACIÓN — esto es TODO lo que normalmente vas a tocar
    ========================================================================= */
@@ -587,17 +590,86 @@ function renderFilters(){
 });
   });
 }
+   function normalizeSearchText(value){
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/cal\.?(?=\s*\d)/g, "cal")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function productMatchesSearch(p, query){
+  const q = normalizeSearchText(query);
+
+  if(!q) return true;
+
+  const textoProducto = normalizeSearchText([
+    p.nombre,
+    p.categoria,
+    p.descripcion_breve,
+    p.descripcion_completa,
+    p.precio,
+    p.calibre,
+    p.kilos,
+    p.peso,
+    p.medida,
+    p.promocion
+  ].join(" "));
+
+  // Cada palabra escrita debe existir en el producto
+  return q
+    .split(/\s+/)
+    .filter(Boolean)
+    .every(palabra => textoProducto.includes(palabra));
+}
+   function normalizeSearchText(value){
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/cal\.?(?=\s*\d)/g, "cal")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function productMatchesSearch(p, query){
+  const q = normalizeSearchText(query);
+
+  if(!q) return true;
+
+  const textoProducto = normalizeSearchText([
+    p.nombre,
+    p.categoria,
+    p.descripcion_breve,
+    p.descripcion_completa,
+    p.precio,
+    p.calibre,
+    p.peso,
+    p.medida
+  ].join(" "));
+
+  return q
+    .split(/\s+/)
+    .filter(Boolean)
+    .every(palabra => textoProducto.includes(palabra));
+}
 function renderGrid(){
   const grid = document.getElementById('catalogGrid');
  const visible = ALL_PRODUCTS.filter(p => {
-  if (ACTIVE_FILTER === "Todos") return true;
+  let coincideFiltro = true;
 
   if (ACTIVE_FILTER === "CINTAS DE ACERO") {
-    return String(p.nombre || "").toLowerCase().includes("cinta");
+    coincideFiltro = String(p.nombre || "")
+      .toLowerCase()
+      .includes("cinta");
+  } else if (ACTIVE_FILTER !== "Todos") {
+    coincideFiltro = p.categoria === ACTIVE_FILTER;
   }
 
-  return p.categoria === ACTIVE_FILTER;
-});
+  return coincideFiltro && productMatchesSearch(p, SEARCH_QUERY);
+});a
   if(!list.length){
     grid.innerHTML = `<div class="empty-state">No hay productos en esta categoría por ahora.</div>`;
     return;
